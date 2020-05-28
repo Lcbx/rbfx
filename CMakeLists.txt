@@ -29,7 +29,9 @@ cmake_minimum_required (VERSION 3.14)
 cmake_policy(SET CMP0077 NEW)
 
 # Set C++ standard
-set (CMAKE_CXX_STANDARD 17)
+if (NOT DEFINED CMAKE_CXX_STANDARD)
+    set (CMAKE_CXX_STANDARD 17)
+endif ()
 
 # Set project name
 project (rbfx)

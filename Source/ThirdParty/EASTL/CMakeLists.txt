@@ -55,6 +55,9 @@ if (BUILD_SHARED_LIBS)
 endif ()
 
 # Urho3D:
+if (UWP)
+    target_compile_options(EASTL PUBLIC /Zc:twoPhase-)
+endif ()
 install (DIRECTORY include/ DESTINATION ${DEST_THIRDPARTY_HEADERS_DIR}/ FILES_MATCHING PATTERN *.h)
 install (DIRECTORY test/packages/EABase/include/Common/ DESTINATION ${DEST_THIRDPARTY_HEADERS_DIR}/ FILES_MATCHING PATTERN *.h)
 install (DIRECTORY test/packages/EAAssert/include/ DESTINATION ${DEST_THIRDPARTY_HEADERS_DIR}/ FILES_MATCHING PATTERN *.h)
